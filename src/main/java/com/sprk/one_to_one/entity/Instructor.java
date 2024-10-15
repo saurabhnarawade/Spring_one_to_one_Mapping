@@ -1,5 +1,6 @@
 package com.sprk.one_to_one.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -17,7 +18,8 @@ public class Instructor {
 
     private String phone;
 
-    @OneToOne()
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "instructor_detail_id")
+    @JsonManagedReference
     private InstructorDetail instructorDetail;
 }
