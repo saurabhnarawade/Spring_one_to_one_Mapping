@@ -22,4 +22,5 @@ public class Instructor {
     @JoinColumn(name = "instructor_detail_id")
     @JsonManagedReference
     private InstructorDetail instructorDetail;
+
 }

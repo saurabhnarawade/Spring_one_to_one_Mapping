@@ -71,4 +71,12 @@ public class DemoController {
         return appDao.saveInstructor(instructor);
 
     }
+
+    @DeleteMapping("/delete-detail/{instructorDetailId}")
+    public String deleteByInstructorDetailId(@PathVariable int instructorDetailId) {
+        String message = appDao.deleteInstructorDetailById(instructorDetailId);
+
+        return message;
+
+    }
 }
